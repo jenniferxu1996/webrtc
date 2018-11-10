@@ -36,19 +36,25 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   margin: 0;
-  padding: 1em;
+  padding: 0.5em;
   word-break: break-word;
 }
 
 button {
   background-color: #d84a38;
   border: none;
-  border-radius: 2px;
+  border-radius: 1.5px;
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.8em;
-  margin: 0 0 1em 0;
-  padding: 0.5em 0.7em 0.6em 0.7em;
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: 0;
+  margin-bottom: 1em;
+  padding-top: 0.4em;
+  padding-right: 0.9em;
+  padding-left: 0.9em;
+  padding-bottom: 0.4em;
 }
 
 button:active {
