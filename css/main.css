@@ -46,14 +46,14 @@ button {
   border-radius: 1.5px;
   color: white;
   font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-top: 0;
   margin-right: 0;
   margin-left: 0;
   margin-bottom: 1em;
   padding-top: 0.4em;
-  padding-right: 0.9em;
-  padding-left: 0.9em;
+  padding-right: 1.2em;
+  padding-left: 1.2em;
   padding-bottom: 0.4em;
 }
 
@@ -95,6 +95,7 @@ div#links {
 }
 
 h1 {
+
   border-bottom: 1px solid #ccc;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
