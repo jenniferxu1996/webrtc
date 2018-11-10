@@ -28,26 +28,29 @@
 
 </head>
 
-<body>
+<body style="height: 480px">
 
-<div id="container">
+<div id="container" style="height: 100%">
     <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a>
         </h1>
+    <script>
+        var framewidth = 148;
 
-    <video id="gum-local" autoplay playsinline style="height:720px;width: 480px"></video>
-    <button id="showVideo">Open camera</button>
+    </script>
+    <video id="gum-local" autoplay playsinline style="height:100%;width:100%"></video>
+    <button id="showVideo" style="">Open camera</button>
 
     <div id="errorMsg"></div>
 
-    <p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>
+    <!--<p class="warning"><strong>Warning:</strong> if you're not using headphones, pressing play will cause feedback.</p>-->
 
-    <p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>
+    <!--<p>Display the video stream from <code>getUserMedia()</code> in a video element.</p>-->
 
-    <p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in
-        global scope, so you can inspect it from the console.</p>
+    <!--<p>The <code>MediaStream</code> object <code>stream</code> passed to the <code>getUserMedia()</code> callback is in-->
+        <!--global scope, so you can inspect it from the console.</p>-->
 
-    <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum"
-       title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+    <!--<a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/gum"-->
+       <!--title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>-->
 </div>
 
 <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
