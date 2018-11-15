@@ -8,19 +8,47 @@
 'use strict';
 
 // Put variables in global scope to make them available to the browser console.
+
+const video = document.querySelector('video');
+const canvas = window.canvas = document.querySelector('canvas');
+canvas.width = 340;
+canvas.height = 500;
 const constraints = window.constraints = {
-  audio: false,
-  video: { facingMode: { exact: "environment" } }
+    audio: false,
+    video: { facingMode: { exact: "environment" } }
 };
 
+const button = document.querySelector("#Capture");
+// button.onclick= function(){
+//     canvas.width = video.videoWidth;
+//     canvas.height = video.videoHeight;
+//     canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth,video.videoHeight);
+//     console.log("capture");
+// }
+function capture(){setInterval(function(){
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0, video.videoWidth,video.videoHeight);
+    console.log("capture");
+},200)};
+
 function handleSuccess(stream) {
-  const video = document.querySelector('video');
   const videoTracks = stream.getVideoTracks();
+  console.log("stream:",stream);
   console.log('Got stream with constraints:', constraints);
   console.log(`Using video device: ${videoTracks[0].label}`);
   window.stream = stream; // make variable available to browser console
   video.srcObject = stream;
+  capture();
+
 }
+
+/*function captureFrame(){
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+    console.log("capture");
+}*/
 
 function handleError(error) {
   if (error.name === 'ConstraintNotSatisfiedError') {
@@ -46,10 +74,11 @@ async function init(e) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia(constraints);
     handleSuccess(stream);
+      captureFrame();
     e.target.disabled = true;
   } catch (e) {
     handleError(e);
   }
 }
-
-document.querySelector('#showVideo').addEventListener('click', e => init(e));
+navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
+//document.querySelector('#capture').addEventListener('click', e => init(e));
